@@ -4,6 +4,11 @@
       <div class="center">Plugins</div>
     </ons-toolbar>
 
+    <ons-fab position="bottom right" ripple>
+      <ons-icon icon="md-plus"></ons-icon>
+    </ons-fab>
+
+    
     <section style="padding: 12px">
       <h3>Vibração</h3>
 
@@ -22,17 +27,32 @@
     </section>
 
     <section style="padding: 12px">
-      <h3>Captura de imagem</h3>
-      <ons-list>
-        <div class="container">
-          <div class="container-flex">
-              <button onclick="capturarImagem(0)">Tirar Foto</button>
-              <button onclick="capturarImagem(1)">Escolher da Galeria</button>
-          </div>
-          <br><br>
-          <img id="minhaImagem" src="" alt="Sua Imagem aparecerá aqui!" />
-      </div>
-      </ons-list>
+      <h3>Captura de Imagem</h3>
+
+      <ons-row style="margin-top: 20px;">
+        <ons-col width="25px" style="text-align: center; line-height: 25px;">
+          <ons-icon icon="md-camera"></ons-icon>
+        </ons-col>
+        <ons-col>
+          <ons-button modifier="large" onclick="capturarImagem(0)">Tirar Foto</ons-button>
+        </ons-col>
+      </ons-row>
+    
+      <ons-row style="margin-top: 20px;">
+        <ons-col width="25px" style="text-align: center; line-height: 25px;">
+          <ons-icon icon="md-collection-image-o"></ons-icon>
+        </ons-col>
+        <ons-col>
+          <ons-button modifier="large" onclick="capturarImagem(1)">Escolher da Galeria</ons-button>
+        </ons-col>
+      </ons-row>
+    
+ 
+      <ons-row style="margin-top: 20px;">
+        <ons-col>
+          <img id="minhaImagem" src="" alt="Sua Imagem aparecerá aqui!" style="width: 100%; max-height: 300px;" />
+        </ons-col>
+      </ons-row>
     </section>
 
     <section style="padding: 12px">
@@ -44,5 +64,5 @@
         <ons-switch id="switch-lanterna"></ons-switch>
       </div>     
     </section>
-
+   
   </ons-page>

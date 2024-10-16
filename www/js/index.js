@@ -193,3 +193,13 @@ function atualizarListaprodutos(done) {
     console.error("Erro ao listar os produtos: ", error);
   });  
 }
+
+
+function showOnsPopover(target) {
+    document.getElementById('popover').show(target);
+}
+
+
+function hideOnsPopover() {
+    document.getElementById('popover').hide();
+}
