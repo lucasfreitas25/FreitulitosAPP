@@ -1,0 +1,44 @@
+<ons-page id="cadastro">
+    <ons-toolbar>
+        <div class="center">Cadastro</div>
+    </ons-toolbar>
+    <section style="padding: 12px">
+        <h3>Cadastrar novo produto</h3>
+        <form id="form-cadastro-produto">
+            <ons-list>
+                <ons-list-header>Preencha os dados para cadastrar um novo produto</ons-list-header>
+                <ons-list-item>
+                    <ons-row>
+                        <ons-col>Nome</ons-col>
+                        <ons-col>
+                            <ons-input id="txt-nome" name="nome-produto" modifier="material" placeholder="ex: Cookie" float></ons-input>
+                        </ons-col>
+                    </ons-row>
+                </ons-list-item>
+                <ons-list-item>
+                    <ons-row>
+                        <ons-col>Valor</ons-col>
+                        <ons-col>
+                            <ons-input id="txt-valor" name="valor" modifier="material" placeholder="ex: 4.5" float></ons-input>
+                        </ons-col>
+                    </ons-row>
+                </ons-list-item>
+                <ons-list-item>
+                    <ons-row>
+                        <ons-col>Quantidade</ons-col>
+                        <ons-col><ons-input id="txt-qtd" name="qtd" modifier="material" placeholder="ex: 20" float></ons-input></ons-col>
+                    </ons-row>
+                </ons-list-item>
+                <ons-list-item>
+                    <ons-row>
+                        <ons-col>Produto Aprovado</ons-col>
+                        <ons-col>
+                            <ons-switch value="SIM" id="rd-aprovado" name="produto-aprovado"></ons-switch>
+                        </ons-col>
+                    </ons-row>
+                </ons-list-item>            
+            </ons-list>
+            <ons-button id="btt-cadastrar-produtos" modifier="large">Cadastrar</ons-button>
+        </form>
+    </section>
+</ons-page>

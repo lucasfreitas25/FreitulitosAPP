@@ -1,0 +1,48 @@
+<ons-page id="plugins">
+
+    <ons-toolbar>
+      <div class="center">Plugins</div>
+    </ons-toolbar>
+
+    <section style="padding: 12px">
+      <h3>Vibração</h3>
+
+      <ons-row style="margin-top: 20px;">
+        <ons-col width="40px" style="text-align: center; line-height: 31px;">
+          <ons-icon icon="md-brightness-low"></ons-icon>
+        </ons-col>
+        <ons-col>
+          <ons-range style="width: 100%;" value="50"></ons-range>
+        </ons-col>
+        <ons-col width="40px" style="text-align: center; line-height: 31px;">
+          <ons-icon icon="md-brightness-high"></ons-icon>
+        </ons-col>
+      </ons-row> 
+      <ons-button id="btt-vibrar" modifier="large">Vibrar</ons-button>
+    </section>
+
+    <section style="padding: 12px">
+      <h3>Captura de imagem</h3>
+      <ons-list>
+        <div class="container">
+          <div class="container-flex">
+              <button onclick="capturarImagem(0)">Tirar Foto</button>
+              <button onclick="capturarImagem(1)">Escolher da Galeria</button>
+          </div>
+          <br><br>
+          <img id="minhaImagem" src="" alt="Sua Imagem aparecerá aqui!" />
+      </div>
+      </ons-list>
+    </section>
+
+    <section style="padding: 12px">
+      <h3>Lanterna</h3>
+      <div class="center">
+        Ativar/Desativar Lanterna
+      </div>
+      <div class="right">
+        <ons-switch id="switch-lanterna"></ons-switch>
+      </div>     
+    </section>
+
+  </ons-page>
