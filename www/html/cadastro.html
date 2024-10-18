@@ -7,38 +7,89 @@
         <form id="form-cadastro-produto">
             <ons-list>
                 <ons-list-header>Preencha os dados para cadastrar um novo produto</ons-list-header>
+                
+                <!-- Nome do Produto -->
                 <ons-list-item>
                     <ons-row>
                         <ons-col>Nome</ons-col>
                         <ons-col>
-                            <ons-input id="txt-nome" name="nome-produto" modifier="material" placeholder="ex: Cookie" float></ons-input>
+                            <ons-input id="txt-nome" name="nome" modifier="material" placeholder="ex: Cookie" float></ons-input>
                         </ons-col>
                     </ons-row>
                 </ons-list-item>
+
+                <!-- Descrição -->
+                <ons-list-item>
+                    <ons-row>
+                        <ons-col>Descrição</ons-col>
+                        <ons-col>
+                            <textarea id="txt-descricao" name="descricao" rows="3" style="width: 100%;" placeholder="Ex: Um delicioso cookie feito pelo freitulitos"></textarea>
+                        </ons-col>
+                    </ons-row>
+                </ons-list-item>
+
+                <!-- Valor -->
                 <ons-list-item>
                     <ons-row>
                         <ons-col>Valor</ons-col>
                         <ons-col>
-                            <ons-input id="txt-valor" name="valor" modifier="material" placeholder="ex: 4.5" float></ons-input>
+                            <ons-input id="txt-valor" name="preco" modifier="material" placeholder="ex: 4.5" float></ons-input>
                         </ons-col>
                     </ons-row>
                 </ons-list-item>
+
+                <!-- Quantidade -->
                 <ons-list-item>
                     <ons-row>
                         <ons-col>Quantidade</ons-col>
-                        <ons-col><ons-input id="txt-qtd" name="qtd" modifier="material" placeholder="ex: 20" float></ons-input></ons-col>
+                        <ons-col>
+                            <ons-input id="txt-qtd" name="quantidade" modifier="material" placeholder="ex: 20" float></ons-input>
+                        </ons-col>
                     </ons-row>
                 </ons-list-item>
+
+                <!-- Produto Aprovado -->
                 <ons-list-item>
                     <ons-row>
                         <ons-col>Produto Aprovado</ons-col>
                         <ons-col>
-                            <ons-switch value="SIM" id="rd-aprovado" name="produto-aprovado"></ons-switch>
+                            <ons-switch value="SIM" id="rd-aprovado" name="aprovado"></ons-switch>
                         </ons-col>
                     </ons-row>
-                </ons-list-item>            
+                </ons-list-item>
+
+                <!-- Captura de Imagem -->
+                <ons-list-item>
+                    <ons-row style="justify-content: center; align-items: center;">
+                        <ons-col width="50%" style="display: flex; justify-content: center;">
+                            <div id="btn_tirar_foto" style="cursor: pointer;">
+                                <svg fill="#000000" height="50px" width="50px" viewBox="0 0 487 487" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M308.1,277.95c0,35.7-28.9,64.6-64.6,64.6s-64.6-28.9-64.6-64.6s28.9-64.6,64.6-64.6S308.1,242.25,308.1,277.95z M440.3,116.05c25.8,0,46.7,20.9,46.7,46.7v122.4v103.8c0,27.5-22.3,49.8-49.8,49.8H49.8c-27.5,0-49.8-22.3-49.8-49.8v-103.9v-122.3l0,0c0-25.8,20.9-46.7,46.7-46.7h93.4l4.4-18.6c6.7-28.8,32.4-49.2,62-49.2h74.1c29.6,0,55.3,20.4,62,49.2l4.3,18.6H440.3z M97.4,183.45c0-12.9-10.5-23.4-23.4-23.4c-13,0-23.5,10.5-23.5,23.4s10.5,23.4,23.4,23.4C86.9,206.95,97.4,196.45,97.4,183.45z M358.7,277.95c0-63.6-51.6-115.2-115.2-115.2s-115.2,51.6-115.2,115.2s51.6,115.2,115.2,115.2S358.7,341.55,358.7,277.95z"/>
+                                </svg>
+                            </div>
+                        </ons-col>
+
+                        <ons-col width="50%" style="display: flex; justify-content: center;">
+                            <div id="btn_enviar_imagem" style="cursor: pointer;">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 0 24 24" width="50px" fill="#000000">
+                                    <path d="M0 0h24v24H0V0z" fill="none"/>
+                                    <path d="M18 20H4V6h9V4H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-9h-2v9zm-7.79-3.17l-1.96-2.36L5.5 18h11l-3.54-4.71zM20 4V1h-2v3h-3c.01.01 0 2 0 2h3v2.99c.01.01 2 0 2 0V6h3V4h-3z"/>
+                                </svg>
+                            </div>
+                        </ons-col>
+                    </ons-row>
+                </ons-list-item>
+
+                <ons-list-item>
+                    <ons-row>
+                        <ons-col>
+                            <img id="imagem-produto" src="" alt="Imagem do Produto" style="width: 100%; max-height: 300px; display: none;" />
+                        </ons-col>
+                    </ons-row>
+                </ons-list-item>
+                
             </ons-list>
-            <ons-button id="btt-cadastrar-produtos" modifier="large">Cadastrar</ons-button>
+            <button type="submit" class="button" style="width: 100%;">Cadastrar</button>
         </form>
     </section>
     <ons-progress-bar value="20" secondary-value="100"></ons-progress-bar>
