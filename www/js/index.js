@@ -86,6 +86,7 @@ ons.ready(function() {
 ons.ready(function() {
 
   // Inicialize o Firebase com as credenciais do seu projeto
+
   const firebaseConfig = {
     apiKey: "",
     authDomain: "",
@@ -101,46 +102,63 @@ ons.ready(function() {
 
   db = firebase.firestore();
 
-  atualizarListaprodutos();
+  // atualizarListaprodutos();
 
 });
 
 function atualizarListaprodutos(done) {
-  // Referência à coleção "produtos"
   console.log("Buscando produtos da coleção 'grupo10'...");
   db.collection("grupo10").get().then((querySnapshot) => {
-
     console.log(`Número de produtos encontrados: ${querySnapshot.size}`);
-
     $("#lista-produtos").empty(); // Limpar a lista de produtos
+
     querySnapshot.forEach((doc) => {
-      //cria os-card para cada iteração
       var produto = doc.data();
       console.log("Produto recuperado:", produto);
-      
+
+      // Cria o cartão do produto
       var card = document.createElement("ons-card");
+
+      // Cria o título do cartão com o nome do produto
       var titulo = document.createElement("div");
-      titulo.setAttribute("class","title");
+      titulo.setAttribute("class", "title");
       titulo.textContent = produto.nome;
 
+      // Cria a área de conteúdo do cartão
       var conteudo = document.createElement("div");
-      conteudo.setAttribute("class","content");
-      conteudo.textContent = "Preco: " + produto.preco;
+      conteudo.setAttribute("class", "content");
 
+      // Cria elemento para o preço
+      var precoElem = document.createElement("p");
+      precoElem.textContent = "Preço: " + produto.preco;
+
+      // Cria elemento para a descrição
+      var descricaoElem = document.createElement("p");
+      descricaoElem.textContent = "Descrição: " + produto.descricao;
+
+      // Adiciona os elementos de preço e descrição ao conteúdo
+      conteudo.appendChild(precoElem);
+      conteudo.appendChild(descricaoElem);
+
+      // Adiciona o título e o conteúdo ao cartão
       card.appendChild(titulo);
       card.appendChild(conteudo);
 
-      //adiciona o card na lista de produtos
+      // Adiciona o cartão à lista de produtos
       $("#lista-produtos").append(card);
-
-      if (done) { done(); }
-
     });
+
+    if (done) {
+      done();
+    }
   }).catch((error) => {
-    if (done) { done(); }
+    if (done) {
+      done();
+    }
     console.error("Erro ao listar os produtos: ", error);
-  });  
+  });
 }
+
 
 
 function showOnsPopover(target) {
@@ -241,6 +259,7 @@ document.addEventListener('init', function(event) {
     pullHook.onAction = function(done) {
       atualizarListaprodutos(done);
     };
+    atualizarListaprodutos();
 
   }
   else if (page.id === 'plugins') {
