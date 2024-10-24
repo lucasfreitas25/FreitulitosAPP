@@ -1,11 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="br.ufmt.ic.pluginsapp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Plugins App</name>
-    <description>Sample Apache Cordova App</description>
+    <name>Freitulitos</name>
+    <description>Seu cookie favorito agora no APP.</description>
     <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
-        Apache Cordova Team
+        Tabelandos
     </author>
     <content src="index.html" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+    <platform name="android">
+    <icon src="www/img/icon-android.png" />
+        <feature name="Vibration">
+            <param name="android-package" value="cordova.plugins.Vibration" />
+        </feature>
+    </platform>
 </widget>
