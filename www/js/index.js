@@ -86,7 +86,6 @@ ons.ready(function() {
 ons.ready(function() {
 
   // Inicialize o Firebase com as credenciais do seu projeto
-
   const firebaseConfig = {
     apiKey: "",
     authDomain: "",
@@ -95,7 +94,6 @@ ons.ready(function() {
     messagingSenderId: "",
     appId: ""
   };
-
   firebase.initializeApp(firebaseConfig);
 
   console.log('firebase.storage:', firebase.storage);
@@ -114,6 +112,7 @@ function atualizarListaprodutos(done) {
 
     querySnapshot.forEach((doc) => {
       var produto = doc.data();
+      var produtoId = doc.id;
       console.log("Produto recuperado:", produto);
 
       // Cria o cartão do produto
@@ -136,6 +135,16 @@ function atualizarListaprodutos(done) {
       var descricaoElem = document.createElement("p");
       descricaoElem.textContent = "Descrição: " + produto.descricao;
 
+      var lixeira = document.createElement("ons-icon");
+      lixeira.setAttribute("icon", "md-delete");
+      lixeira.setAttribute(
+        "style",
+        "color: red; font-size: 32px; float: right; cursor: pointer; margin-top: -40px;"
+      );
+      lixeira.onclick = function() {
+        abrirPopup(produtoId);
+      };
+
       // Adiciona os elementos de preço e descrição ao conteúdo
       conteudo.appendChild(precoElem);
       conteudo.appendChild(descricaoElem);
@@ -143,6 +152,7 @@ function atualizarListaprodutos(done) {
       // Adiciona o título e o conteúdo ao cartão
       card.appendChild(titulo);
       card.appendChild(conteudo);
+      card.appendChild(lixeira);
 
       // Adiciona o cartão à lista de produtos
       $("#lista-produtos").append(card);
@@ -157,6 +167,43 @@ function atualizarListaprodutos(done) {
     }
     console.error("Erro ao listar os produtos: ", error);
   });
+}
+
+let produtoIdParaExcluir = null;
+
+function abrirPopup(produtoId) {
+  produtoIdParaExcluir = produtoId; 
+
+  ons.notification.confirm({
+    title: 'Confirmação',
+    message: 'Tem certeza que deseja excluir este produto?',
+    buttonLabels: ['Não', 'Sim'], 
+    cancelable: true, 
+    callback: function(index) {
+      if (index === 1) {
+        confirmarExclusao();
+      } else {
+        produtoIdParaExcluir = null; 
+      }
+    }
+  });
+}
+
+function fecharPopup() {
+  produtoIdParaExcluir = null;
+  document.getElementById('confirm-dialog').hide();
+}
+
+function confirmarExclusao() {
+  if (produtoIdParaExcluir) {
+    db.collection("grupo10").doc(produtoIdParaExcluir).delete().then(() => {
+      ons.notification.alert('Produto excluído com sucesso!');
+      atualizarListaprodutos();
+    }).catch((error) => {
+      console.error("Erro ao excluir o produto: ", error);
+      ons.notification.alert('Erro ao excluir o produto. Tente novamente.');
+    });
+  }
 }
 
 
@@ -238,17 +285,29 @@ document.addEventListener('init', function(event) {
             // Salvar os dados no Firestore
             await db.collection('grupo10').add(dadosProduto);
 
-            console.log("Produto cadastrado com sucesso!");
-            ons.notification.alert('Produto cadastrado com sucesso!');
+            ons.notification.alert({
+              title: 'Sucesso!',
+              message: 'Produto cadastrado com sucesso!',
+              buttonLabel: 'OK',
+              callback: function() {
+                form.reset();
+                document.getElementById('imagem-produto').style.display = 'none';
+                atualizarListaprodutos();
+                console.log("Produto cadastrado com sucesso!");
+              }
+            });
+
             form.reset();
             document.getElementById('imagem-produto').style.display = 'none';
 
         } catch (error) {
             console.error('Erro ao cadastrar produto: ', error);
-            ons.notification.alert('Erro ao cadastrar o produto. Tente novamente.');
+            ons.notification.alert({title: 'Atenção', message: 'Erro ao cadastrar o produto. Tente novamente.'});
         }
     } else {
-        ons.notification.alert('Por favor, preencha todos os campos obrigatórios e capture uma imagem.');
+        ons.notification.alert({
+          title: 'Atenção',
+          message: 'Por favor, preencha todos os campos obrigatórios e capture uma imagem',});
     }
 });
 

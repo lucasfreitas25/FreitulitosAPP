@@ -7,6 +7,18 @@
   </ons-pull-hook>
   <div id="lista-produtos"></div>
 
+  <ons-alert-dialog id="confirm-dialog" cancelable>
+    <div class="alert-dialog-title">Confirmação</div>
+    <div class="alert-dialog-content">
+      Tem certeza que deseja excluir este produto?
+    </div>
+    <div class="alert-dialog-footer">
+      <button class="alert-dialog-button" onclick="fecharPopup()">Não</button>
+      <button class="alert-dialog-button" onclick="confirmarExclusao()">Sim</button>
+    </div>
+  </ons-alert-dialog>
+
+  
   <ons-speed-dial position="bottom right" direction="up">
     <ons-fab>
       <ons-icon icon="md-share"></ons-icon>
