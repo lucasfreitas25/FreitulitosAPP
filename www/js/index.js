@@ -1,30 +1,51 @@
 //"variáveis globais"
 var db = null;
 
-function ligarDesligarLanterna() {
-  window.plugins.flashlight.toggle(
-      function() {
-        if (window.plugins.flashlight.isSwitchedOn()) {
-          $("#switch-lanterna").attr("checked","checked");
-        }
-        else {
-          $("#switch-lanterna").removeAttr("checked");
-        }
-      },
-      function() {}, 
-      {intensity: 0.3} 
+
+
+// function vibrate() {
+//   const time = document.getElementById('vibrationRange').value;
+//   navigator.vibrate(time);
+// }
+
+
+// function handleVibrationRangeChange() {
+//   const time = document.getElementById('vibrationRange').value;
+//   document.getElementById('vibrationValue').innerText = time ;
+// }
+
+function geolocationSuccess(position) {
+  const fixedLatitude = -15.60833148961609;
+  const fixedLongitude = -56.06281015821597;
+  
+  const latitudeDifference = fixedLatitude - position.coords.latitude;
+  const longitudeDifference = fixedLongitude - position.coords.longitude;
+
+  document.getElementById("latitude").textContent = "Latitude: " + latitudeDifference;
+  document.getElementById("longitude").textContent = "Longitude: " + longitudeDifference;
+  document.getElementById("error").textContent = "";
+}
+
+function geolocationError(error) {
+  document.getElementById("error").textContent = "Erro ao obter localização: " + error.message;
+  document.getElementById("latitude").textContent = "";
+  document.getElementById("longitude").textContent = "";
+}
+
+const geolocationOptions = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+};
+
+function geolocation() {
+  navigator.geolocation.getCurrentPosition(
+    geolocationSuccess,
+    geolocationError,
+    geolocationOptions
   );
 }
 
-function vibrate() {
-  const time = document.getElementById('vibrationRange').value;
-  navigator.vibrate(time);
-}
-
-function handleVibrationRangeChange() {
-  const time = document.getElementById('vibrationRange').value;
-  document.getElementById('vibrationValue').innerText = time ;
-}
 
 function capturarImagem(tipo) {
   var sourceType = tipo === 0 ? Camera.PictureSourceType.CAMERA : Camera.PictureSourceType.PHOTOLIBRARY;
@@ -62,12 +83,6 @@ ons.ready(function() {
       function() {
         var menu = document.getElementById('side-menu');
         menu.open();
-      }
-    );
-    //LATERNA
-    $("#fab-lanterna").on("click",
-      function() {
-        ligarDesligarLanterna();
       }
     );
 
@@ -218,7 +233,7 @@ function hideOnsPopover() {
 }
 
 
-document.addEventListener('init', function(event) {
+  document.addEventListener('init', function(event) {
   var page = event.target;
 
   if (page.id === 'cadastro') {
@@ -329,11 +344,6 @@ document.addEventListener('init', function(event) {
       }
     );
 
-    $("#switch-lanterna").on("change",
-      function() {
-        ligarDesligarLanterna();
-      }
-    );
     $("#switch-imagem").on("change",
       function() {
         capturarImagem();

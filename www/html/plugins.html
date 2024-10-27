@@ -9,7 +9,7 @@
     </ons-fab>
 
     
-    <section style="padding: 12px">
+    <!-- <section style="padding: 12px">
       <h3>Vibração</h3>
 
       <ons-row style="margin-top: 20px;">
@@ -24,6 +24,14 @@
         </ons-col>
       </ons-row> 
       <ons-button id="btt-vibrar" modifier="large">Vibrar</ons-button>
+    </section> -->
+
+    <section style="padding: 20px;">
+      <h3>Localização para loja</h3>
+      <ons-button onclick="geolocation()">Obter Localização</ons-button>
+      <p id="latitude">Latitude: </p>
+      <p id="longitude">Longitude: </p>
+      <p id="error">Erro: </p>
     </section>
 
     <section style="padding: 12px">
@@ -55,14 +63,7 @@
       </ons-row>
     </section>
 
-    <section style="padding: 12px">
-      <h3>Lanterna</h3>
-      <div class="center">
-        Ativar/Desativar Lanterna
-      </div>
-      <div class="right">
-        <ons-switch id="switch-lanterna"></ons-switch>
-      </div>     
-    </section>
+
+
    
   </ons-page>
