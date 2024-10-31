@@ -2,9 +2,6 @@
   <ons-toolbar>
     <div class="center">Lista dos produtos cadastrados</div>
   </ons-toolbar>
-  <ons-pull-hook id="ph-refresh-produtos">
-    Arraste para atualizar
-  </ons-pull-hook>
   <div id="lista-produtos"></div>
 
   <ons-alert-dialog id="confirm-dialog" cancelable>
@@ -19,24 +16,4 @@
   </ons-alert-dialog>
 
   
-  <ons-speed-dial position="bottom right" direction="up">
-    <ons-fab>
-      <ons-icon icon="md-share"></ons-icon>
-    </ons-fab>
-    <ons-speed-dial-item>
-      <a href="https://twitter.com" onclick="event.preventDefault(); window.open(this.href, '_system');">
-        <ons-icon icon="md-twitter"></ons-icon>
-      </a>
-    </ons-speed-dial-item>
-    <ons-speed-dial-item>
-      <a href="https://facebook.com" onclick="event.preventDefault(); window.open(this.href, '_system');">
-        <ons-icon icon="md-facebook"></ons-icon>
-      </a>
-    </ons-speed-dial-item>
-    <ons-speed-dial-item>
-      <a href="https://www.google.com" onclick="event.preventDefault(); window.open(this.href, '_system');">
-        <ons-icon icon="md-google-plus"></ons-icon>
-      </a>
-    </ons-speed-dial-item>
-  </ons-speed-dial>
 </ons-page>

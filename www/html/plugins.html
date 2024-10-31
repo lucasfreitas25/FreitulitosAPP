@@ -4,28 +4,6 @@
       <div class="center">Plugins</div>
     </ons-toolbar>
 
-    <ons-fab position="bottom right" ripple>
-      <ons-icon icon="md-plus"></ons-icon>
-    </ons-fab>
-
-    
-    <!-- <section style="padding: 12px">
-      <h3>Vibração</h3>
-
-      <ons-row style="margin-top: 20px;">
-        <ons-col width="40px" style="text-align: center; line-height: 31px;">
-          <ons-icon icon="md-brightness-low"></ons-icon>
-        </ons-col>
-        <ons-col>
-          <ons-range style="width: 100%;" value="50"></ons-range>
-        </ons-col>
-        <ons-col width="40px" style="text-align: center; line-height: 31px;">
-          <ons-icon icon="md-brightness-high"></ons-icon>
-        </ons-col>
-      </ons-row> 
-      <ons-button id="btt-vibrar" modifier="large">Vibrar</ons-button>
-    </section> -->
-
     <section style="padding: 20px;">
       <h3>Localização para loja</h3>
       <ons-button onclick="geolocation()">Obter Localização</ons-button>
@@ -55,15 +33,21 @@
         </ons-col>
       </ons-row>
     
- 
-      <ons-row style="margin-top: 20px;">
-        <ons-col>
-          <img id="minhaImagem" src="" alt="Sua Imagem aparecerá aqui!" style="width: 100%; max-height: 300px;" />
-        </ons-col>
-      </ons-row>
-    </section>
-
-
+      <ons-speed-dial position="bottom right" direction="up">
+        <ons-fab id="icone_redes" >
+          <ons-icon  icon="md-share"></ons-icon>
+        </ons-fab>
+        <ons-speed-dial-item>
+          <a href="https://www.instagram.com/freitulitos/" onclick="event.preventDefault(); window.open(this.href, '_system');">
+            <ons-icon  id="icone_instagram"  icon="md-instagram"></ons-icon>
+          </a>
+        </ons-speed-dial-item>
+        <ons-speed-dial-item>
+          <a href="https://linktr.ee/freitulitos?fbclid=PAZXh0bgNhZW0CMTEAAaYb4Cchevb3cYdLcLsSu81Dlr9Me0sLe-m1gzBhIT-vU0T3ubiQ6UDw05I_aem_M84th5jwpNcJiWlbDEbtCg" onclick="event.preventDefault(); window.open(this.href, '_system');">
+            <ons-icon  id="icone_google"  icon="md-google"></ons-icon>
+          </a>
+        </ons-speed-dial-item>
+      </ons-speed-dial>
 
    
   </ons-page>

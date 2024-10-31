@@ -3,6 +3,8 @@
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
 
+
+
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
@@ -111,8 +113,41 @@ border: none;
 padding: 10px;
 }
 
-/* Estilo do botão ativo (selecionado) */
+
 .segment-btn.active {
-background-color: #b34242; /* Cor de fundo azul para o botão selecionado */
+background-color: #b34242; 
 color: white;
+}
+
+#showPopoverBtn {
+    background-color: #1e0a75; 
+    color: #ffffff; 
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+#popover ons-button {
+    background-color: #1e0a75; 
+    color: #ffffff;
+    border-radius: 4px;
+    padding: 5px 10px;
+}
+
+
+#icone_instagram {
+    color: #ffffff;
+
+}
+
+
+#icone_google {
+    color: #ffffff; 
+
+}
+
+
+#icone_redes {
+    background-color: #1e0a75; 
+    color: #ffffff;
 }
