@@ -131,8 +131,8 @@ function atualizarListaProdutos(done) {
           const col2 = document.createElement("ons-col");
           const row = document.createElement("ons-row");
 
-          col1.setAttribute("width", "30%");
-          col2.setAttribute("width", "65%");
+          col1.setAttribute("width", "25%");
+          col2.setAttribute("width", "70%");
 
           row.appendChild(col1);
           row.appendChild(col2);
@@ -164,7 +164,6 @@ function atualizarListaProdutos(done) {
           };
 
           const imagem = document.createElement("img");
-          imagem.setAttribute("style", "width: 100%;");
           imagem.src = produto?.imagem;
 
           col1.appendChild(imagem);
@@ -248,6 +247,7 @@ document.addEventListener("init", function (event) {
     const form = page.querySelector("#form-cadastro-produto");
     const svgTirarFoto = page.querySelector("#btn_tirar_foto");
     const svgGaleria = page.querySelector("#btn_enviar_imagem");
+    const btnSubmit = page.querySelector("#btn-submit");
 
     svgTirarFoto.addEventListener("click", () => capturarImagem(0));
 
@@ -255,6 +255,7 @@ document.addEventListener("init", function (event) {
 
     form.addEventListener("submit", async function (event) {
       event.preventDefault();
+      btnSubmit.setAttribute("disabled", "true");
 
       const nome = form.querySelector("#txt-nome").value.trim();
       const descricao = form.querySelector("#txt-descricao").value.trim();
@@ -317,6 +318,7 @@ document.addEventListener("init", function (event) {
             "Por favor, preencha todos os campos obrigatórios e capture uma imagem",
         });
       }
+      btnSubmit.removeAttribute("disabled");
     });
   } else if (page.id === "lista") {
     pullHook = document.querySelector("#ph-refresh-produtos");

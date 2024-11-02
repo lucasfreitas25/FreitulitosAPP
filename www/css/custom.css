@@ -18,8 +18,8 @@ ons-col ons-input{
 }
 
 .card img{
-    width: 100%;
-    height: 100%;
+    width: 5rem;
+    height: 5rem;
     object-fit: cover;
     border-radius: 10px;
 }
@@ -37,4 +37,15 @@ ons-col ons-input{
 .description{
     font-size: 0.75rem;
     font-weight: normal;
+}
+
+
+#icone_instagram, #icone_google{
+    color: #1e0a75;
+}
+
+
+#icone_redes {
+    background-color: #1e0a75; 
+    color: #ffffff;
 }

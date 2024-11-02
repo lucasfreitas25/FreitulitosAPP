@@ -1,41 +1,70 @@
-
 <ons-page id="sobre">
-    <ons-toolbar>
-        <div class="center">Sobre</div>
-        <div class="left">
-            <ons-toolbar-button id="btt-side-menu">
-                <ons-icon icon="md-menu"></ons-icon>
-            </ons-toolbar-button>
-        </div>        
-    </ons-toolbar>
+  <ons-toolbar>
+    <div class="center">Sobre</div>
+    <div class="left">
+      <ons-toolbar-button id="btt-side-menu">
+        <ons-icon icon="md-menu"></ons-icon>
+      </ons-toolbar-button>
+    </div>
+  </ons-toolbar>
 
-    <section style="padding: 12px; text-align: center;">
-        <h1>Apresentação e Créditos</h1>
-        <img style="width: 40%;" src="../img/icon-android.png" alt="">
-        <p>O Aplicativo Freitulitos (FreitApp) permite que os usuários cadastrem, listem e removam produtos de maneira simples. Inclui tela dedicada às informações da lojinha, onde são cadastradas informações como nome, endereço e telefone.</p>
+  <section style="padding: 12px; text-align: center">
+    <h1>Apresentação e Créditos</h1>
+    <img style="width: 40%" src="../img/icon-android.png" alt="" />
+    <p>
+      O Aplicativo Freitulitos (FreitApp) permite que os usuários cadastrem,
+      listem e removam produtos de maneira simples. Inclui tela dedicada às
+      informações da lojinha, onde são cadastradas informações como nome,
+      endereço e telefone.
+    </p>
 
-        <h2>Integrantes do Grupo:</h2>
-        <ul>
-            <li>LUCAS EDUARDO DE FREITAS - RGA: 202011310022</li>
-            <li>GUSTAVO AVALOS DE ALMEIDA - RGA: 201911310017</li>
-            <li>JOAO GUILHERME DOS SANTOS MOREIRA - RGA: 201911310024</li>
-            <li>LUCCA SOUZA DI OLIVEIRA - RGA: 202011310024</li>
-            <li>MATHEUS MELLO DE AZEVEDO - RGA: 201911310037</li>
-            <li>PABLIO SANTOS CORADI - RGA: 201811310025</li>
-        </ul>
+    <h2>Integrantes do Grupo:</h2>
+    <ul>
+      <li>LUCAS EDUARDO DE FREITAS - RGA: 202011310022</li>
+      <li>GUSTAVO AVALOS DE ALMEIDA - RGA: 201911310017</li>
+      <li>JOAO GUILHERME DOS SANTOS MOREIRA - RGA: 201911310024</li>
+      <li>LUCCA SOUZA DI OLIVEIRA - RGA: 202011310024</li>
+      <li>MATHEUS MELLO DE AZEVEDO - RGA: 201911310037</li>
+      <li>PABLIO SANTOS CORADI - RGA: 201811310025</li>
+    </ul>
 
-            <!-- Botão para abrir o popover -->
-            <p style="text-align: center; margin: 25px 0;">
-                <ons-button id="showPopoverBtn" onclick="showOnsPopover(this)">Segredo 🤧</ons-button>
-            </p>
-        </section>
+    <!-- Botão para abrir o popover -->
+    <p style="text-align: center; margin: 25px 0">
+      <ons-button id="showPopoverBtn" onclick="showOnsPopover(this)"
+        >Segredo 🤧</ons-button
+      >
+    </p>
+  </section>
 
-        <ons-popover direction="up" id="popover">
-            <div style="padding: 10px; text-align: center;">
-                <h4>🤩😳🤠</h4>
-                <img style="width: 100%;" src="../img/minha-padaria.png" alt="">
-                <p>
-                    <ons-button onclick="hideOnsPopover()">Fechar</ons-button>
-                </p>
-            </div>
-        </ons-popover>
+  <ons-popover direction="up" id="popover">
+    <div style="padding: 10px; text-align: center">
+      <h4>🤩😳🤠</h4>
+      <img style="width: 100%" src="../img/minha-padaria.png" alt="" />
+      <p>
+        <ons-button onclick="hideOnsPopover()">Fechar</ons-button>
+      </p>
+    </div>
+  </ons-popover>
+
+  <ons-speed-dial position="bottom right" direction="up">
+    <ons-fab id="icone_redes">
+      <ons-icon icon="md-share"></ons-icon>
+    </ons-fab>
+    <ons-speed-dial-item>
+      <a
+        href="https://www.instagram.com/freitulitos/"
+        onclick="event.preventDefault(); window.open(this.href, '_system');"
+      >
+        <ons-icon id="icone_instagram" icon="md-instagram"></ons-icon>
+      </a>
+    </ons-speed-dial-item>
+    <ons-speed-dial-item>
+      <a
+        href="https://linktr.ee/freitulitos?fbclid=PAZXh0bgNhZW0CMTEAAaYb4Cchevb3cYdLcLsSu81Dlr9Me0sLe-m1gzBhIT-vU0T3ubiQ6UDw05I_aem_M84th5jwpNcJiWlbDEbtCg"
+        onclick="event.preventDefault(); window.open(this.href, '_system');"
+      >
+        <ons-icon id="icone_google" icon="md-google"></ons-icon>
+      </a>
+    </ons-speed-dial-item>
+  </ons-speed-dial>
+</ons-page>
