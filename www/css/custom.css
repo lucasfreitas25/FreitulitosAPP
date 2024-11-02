@@ -1,0 +1,51 @@
+
+.card ons-row{
+    gap: 1rem;
+}
+
+.card ons-col{
+    position: relative;
+}
+
+ons-col ons-input{
+    width: 100%;
+}
+
+.card ons-col ons-icon{
+    bottom: 0;
+    right: 0;
+    position: absolute;
+}
+
+.card img{
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.title{
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.price{
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.description{
+    font-size: 0.75rem;
+    font-weight: normal;
+}
+
+
+#icone_instagram, #icone_google{
+    color: #1e0a75;
+}
+
+
+#icone_redes {
+    background-color: #1e0a75; 
+    color: #ffffff;
+}

@@ -1,0 +1,68 @@
+<ons-page id="minha-loja">
+
+    <ons-toolbar>
+      <div class="center">Minha loja</div>
+    </ons-toolbar>
+
+    <section style="padding: 20px;">
+      <h3>Dados gerais da loja</h3>
+
+      <form id="form-loja">
+        <ons-list>
+          <ons-list-item>
+            <ons-row>
+              <ons-col width="30%">Nome</ons-col>
+              <ons-col width="65%">
+                <ons-input id="txt-nome-loja" name="nome" modifier="material" placeholder="ex: Freitulitos"></ons-input>
+              </ons-col>
+            </ons-row>
+          </ons-list-item>
+
+          <ons-list-item>
+            <ons-row>
+              <ons-col width="30%">Endereço</ons-col>
+              <ons-col width="65%">
+                <ons-input id="txt-endereco-loja" name="endereco" modifier="material" placeholder="ex: Rua dos Bobos, 0"></ons-input>
+              </ons-col>
+            </ons-row>
+          </ons-list-item>
+
+          <ons-list-item>
+            <ons-row>
+              <ons-col width="30%">Telefone</ons-col>
+              <ons-col width="65%">
+                <ons-input id="txt-telefone-loja" name="telefone" modifier="material" placeholder="ex: (00) 0000-0000"></ons-input>
+              </ons-col>
+            </ons-row>
+          </ons-list-item>
+        </ons-list>
+
+        <ons-button type="submit" onclick="salvarDadosGeraisLoja()" style="width: 100%;">Salvar</ons-button>
+      </form>
+      </section>
+
+    <section style="padding: 20px;">
+      <h3>Localização da loja</h3>
+      <ons-list>
+        <ons-list-item>
+          <ons-row>
+            <ons-col width="30%">Latitude</ons-col>
+            <ons-col width="65%">
+              <ons-input id="latitude" name="latitude" modifier="material" placeholder="ex: -23.5505199" aria-disabled="true"></ons-input>
+            </ons-col>
+          </ons-row>
+        </ons-list-item>
+
+        <ons-list-item>
+          <ons-row>
+            <ons-col width="30%">Longitude</ons-col>
+            <ons-col width="65%">
+              <ons-input id="longitude" name="longitude" modifier="material" placeholder="ex: -46.6333094" aria-disabled="true"></ons-input>
+            </ons-col>
+          </ons-row>
+        </ons-list-item>
+      </ons-list>
+      <ons-button onclick="obterLocalizacao()" style="width: 100%;">Atualizar Localização</ons-button>
+    </section>
+   
+  </ons-page>
