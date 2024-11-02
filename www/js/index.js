@@ -7,10 +7,8 @@ function geolocationSuccess(position) {
   const latitudeDifference = fixedLatitude - position.coords.latitude;
   const longitudeDifference = fixedLongitude - position.coords.longitude;
 
-  document.getElementById("latitude").textContent =
-    "Latitude: " + latitudeDifference;
-  document.getElementById("longitude").textContent =
-    "Longitude: " + longitudeDifference;
+  document.getElementById("latitude").textContent = latitudeDifference;
+  document.getElementById("longitude").textContent = longitudeDifference;
   document.getElementById("error").textContent = "";
 }
 
@@ -99,7 +97,14 @@ ons.ready(function () {
       obterLocalizacao();
     })
     .catch((error) => {
-      console.error("erro ao carregar env.json:", error);
+      ons.notification.alert(error)
+      ons.notification.toast("erro ao carregar env.json", {
+        timeout: 2000,
+        buttonLabel: "OK",
+        callback: function () {
+          console.error("erro ao carregar env.json:", error);
+        },
+      });
     });
 });
 

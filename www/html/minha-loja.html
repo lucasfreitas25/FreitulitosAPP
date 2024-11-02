@@ -1,7 +1,7 @@
-<ons-page id="plugins">
+<ons-page id="minha-loja">
 
     <ons-toolbar>
-      <div class="center">Plugins</div>
+      <div class="center">Minha loja</div>
     </ons-toolbar>
 
     <section style="padding: 20px;">
@@ -43,9 +43,26 @@
 
     <section style="padding: 20px;">
       <h3>Localização da loja</h3>
-      <p id="latitude">Latitude: </p>
-      <p id="longitude">Longitude: </p>
-      <ons-button onclick="obterLocalizacao()">Atualizar Localização</ons-button>
+      <ons-list>
+        <ons-list-item>
+          <ons-row>
+            <ons-col width="30%">Latitude</ons-col>
+            <ons-col width="65%">
+              <ons-input id="latitude" name="latitude" modifier="material" placeholder="ex: -23.5505199" aria-disabled="true"></ons-input>
+            </ons-col>
+          </ons-row>
+        </ons-list-item>
+
+        <ons-list-item>
+          <ons-row>
+            <ons-col width="30%">Longitude</ons-col>
+            <ons-col width="65%">
+              <ons-input id="longitude" name="longitude" modifier="material" placeholder="ex: -46.6333094" aria-disabled="true"></ons-input>
+            </ons-col>
+          </ons-row>
+        </ons-list-item>
+      </ons-list>
+      <ons-button onclick="obterLocalizacao()" style="width: 100%;">Atualizar Localização</ons-button>
     </section>
    
   </ons-page>

@@ -1,5 +1,5 @@
 
-<ons-page id="home">
+<ons-page id="sobre">
     <ons-toolbar>
         <div class="center">Sobre</div>
         <div class="left">
@@ -9,9 +9,11 @@
         </div>        
     </ons-toolbar>
 
-    <section style="padding: 12px;">
+    <section style="padding: 12px; text-align: center;">
         <h1>Apresentação e Créditos</h1>
-        <p>Introdução ao projeto com uma visão geral do sistema desenvolvido. Também serão destacados os membros do grupo e suas contribuições.</p>
+        <img style="width: 40%;" src="../img/icon-android.png" alt="">
+        <p>O Aplicativo Freitulitos (FreitApp) permite que os usuários cadastrem, listem e removam produtos de maneira simples. Inclui tela dedicada às informações da lojinha, onde são cadastradas informações como nome, endereço e telefone.</p>
+
         <h2>Integrantes do Grupo:</h2>
         <ul>
             <li>LUCAS EDUARDO DE FREITAS - RGA: 202011310022</li>
@@ -24,14 +26,14 @@
 
             <!-- Botão para abrir o popover -->
             <p style="text-align: center; margin: 25px 0;">
-                <ons-button id="showPopoverBtn" onclick="showOnsPopover(this)">Mostrar Popover</ons-button>
+                <ons-button id="showPopoverBtn" onclick="showOnsPopover(this)">Segredo 🤧</ons-button>
             </p>
         </section>
 
         <ons-popover direction="up" id="popover">
             <div style="padding: 10px; text-align: center;">
                 <h4>🤩😳🤠</h4>
-                <img style="width: 100%;" src="../img/icon-android.png" alt="">
+                <img style="width: 100%;" src="../img/minha-padaria.png" alt="">
                 <p>
                     <ons-button onclick="hideOnsPopover()">Fechar</ons-button>
                 </p>
